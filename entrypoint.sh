@@ -6,6 +6,6 @@ if [ ! -f $LOGFILE ]; then
     touch $LOGFILE
 fi
 
-#exec syslogd 2>/dev/null
+syslogd 2>/dev/null
 exec tail -f $LOGFILE &
 exec "$@"
