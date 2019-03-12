@@ -1,0 +1,34 @@
+# use to create a swarm template in Portainer
+version: '3.7'
+
+x-default-opts: 
+  &default-opts
+  deploy:
+    restart_policy:
+      condition: on-failure
+      delay: 5s
+      #max_attempts: 3
+      window: 20s
+  
+services:
+  tftp:
+    image: neomediatech/tftp-alpine:latest
+    hostname: tftp
+    <<: *default-opts    
+    ports:
+      - target: 69
+        published: 69
+        protocol: udp
+        mode: host
+    volumes:
+      - tftpboot:/tftpboot
+    environment:
+      TZ: Europe/Rome
+
+volumes:
+  tftpboot:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /srv/data/tftp/files
