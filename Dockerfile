@@ -4,7 +4,8 @@ LABEL maintainer="docker-dario@neomediatech.it"
 
 RUN apk update && apk upgrade && \ 
     apk add --no-cache tzdata tftp-hpa bash tini rsyslog && \
-    cp /usr/share/zoneinfo/Europe/Rome /etc/localtime
+    cp /usr/share/zoneinfo/Europe/Rome /etc/localtime && \
+    rm -rf /usr/local/share/doc /usr/local/share/man
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
