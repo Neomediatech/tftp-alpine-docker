@@ -21,7 +21,7 @@ services:
         protocol: udp
         mode: host
     volumes:
-      - tftpboot:/tftpboot
+      - tftpboot:/var/tftpboot
     environment:
       TZ: Europe/Rome
 
