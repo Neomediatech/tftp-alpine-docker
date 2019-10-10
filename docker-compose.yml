@@ -20,6 +20,7 @@ services:
         published: 69
         protocol: udp
         mode: host
+      - 6969-6999:6969-6999/udp
     volumes:
       - tftpboot:/var/tftpboot
     environment:
