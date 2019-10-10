@@ -16,4 +16,4 @@ EXPOSE 6969:6999/udp
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["in.tftpd", "-4", "-vvv", "--foreground", "--secure", "-p", "/var/tftpboot"]
+CMD ["in.tftpd", "-4", "-vvv", "--foreground", "--secure", "-p", "/var/tftpboot", "-R", "6969:6999"]
