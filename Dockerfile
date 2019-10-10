@@ -10,10 +10,10 @@ RUN apk update && apk upgrade && \
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-VOLUME /tftpboot
+VOLUME /var/tftpboot
 EXPOSE 69/udp
 
 ENTRYPOINT ["/entrypoint.sh"]
 
 #CMD ["tini", "--", "in.tftpd", "-4", "-vvv", "--foreground", "--secure", "-p", "/tftpboot"]
-CMD ["in.tftpd", "-4", "-vvv", "--foreground", "--secure", "-p", "/tftpboot"]
+CMD ["in.tftpd", "-4", "-vvv", "--foreground", "--secure", "-p", "/var/tftpboot"]
