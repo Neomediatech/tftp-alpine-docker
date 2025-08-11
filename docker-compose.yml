@@ -12,7 +12,7 @@ x-default-opts:
   
 services:
   tftp:
-    image: neomediatech/tftp-alpine:latest
+    image: ghcr.io/neomediatech/tftp-alpine:latest
     hostname: tftp
     <<: *default-opts    
     ports:
