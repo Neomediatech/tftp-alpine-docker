@@ -29,6 +29,7 @@ jobs:
       force-build: "${{ github.event.inputs.force-build }}"
       update-image: "true"
       image-type: "alpine"
+      package-to-check: "tftp-hpa"
     secrets:
       NOTIFY_CMD: ${{ secrets.NOTIFY_CMD }}
       NOTIFY_UP: ${{ secrets.NOTIFY_UP }}
